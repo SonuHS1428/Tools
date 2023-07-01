@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <link rel="stylesheet" href="calculator.css"/>
+    </head>
+    <body>
+      <div class="container">
+        <h1>CALCULATOR</h1>
+        <div class="calculator">
+          <input type="text" name="screen" id="screen">
+        <table>
+          <tr>
+          <td><button onclick="cal('(')">(</button></td>
+          <td><button onclick="cal(')')">)</button></td>
+          <td><button onclick="cal('%')">%</button></td>
+          <td><button onclick="del()">CLR</button></td>
+          </tr>
+          <tr>
+            <td><button onclick="cal(7)">7</button></td>
+            <td><button onclick="cal(8)">8</button></td>
+            <td><button onclick="cal(9)">9</button></td>
+            <td><button onclick="cal('/')">/</button></td>
+            </tr>
+            <tr>
+              <td><button onclick="cal(4)">4</button></td>
+              <td><button onclick="cal(5)">5</button></td>
+              <td><button onclick="cal(6)">6</button></td>
+              <td><button onclick="cal('*')">*</button></td>
+              </tr>
+              <tr>
+                <td><button onclick="cal(1)">1</button></td>
+                <td><button onclick="cal(2)">2</button></td>
+                <td><button onclick="cal(3)">3</button></td>
+                <td><button onclick="cal('-')">-</button></td>
+                </tr>
+                <tr>
+                  <td><button onclick="cal(0)">0</button></td>
+                  <td><button onclick="cal('.')">.</button></td>
+                  <td><button onclick="res('=')">=</button></td>
+                  <td><button onclick="cal('+')">+</button></td>
+                  </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      let output=document.getElementById("screen");
+
+      function cal(num){
+        output.value += num;
+      }
+      function del(){
+        output.value="";
+      }
+      function res(){
+        output.value=eval(output.value);
+      }
+    </script>
+    <a href="index.html">BACK</a>
+    </body>
+</html>

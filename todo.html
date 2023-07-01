@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>TODOLIST</title>
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+            
+        <div id="first">
+            <h1 id="new">TODOLIST</h1>
+            <input type="text" id="input">
+           <button  id="one" onclick="Addtodo()">ADD</button>
+            <button id="two" onclick="clearcontent()">CLEAR</button>
+            <button id="three" onclick="tosort()">SORT</button>
+            <div id="display">
+
+            </div>
+        </div>
+        <script>
+            var todolist = [];
+            function Addtodo()
+            {
+               
+               var value = document.getElementById("input").value;
+               todolist.push(value);
+               displaytodo();
+               document.getElementById("input").value = '';
+                
+            }
+            function displaytodo()
+            {
+                var htmlcode=[];
+                todolist.forEach((item,index)=> {
+                    htmlcode += `<div id="list"> ${item} <button id="delete" onclick="deleteitem(${index})">Delete</button>
+                       
+                            </div>`;
+                });
+                document.getElementById("display").innerHTML=htmlcode;
+            }
+            function clearcontent()
+            {
+                document.getElementById("display").innerHTML='';
+            }
+            function deleteitem(index)
+            {
+                todolist.splice(index,1);
+                displaytodo();
+            }
+            function tosort()
+            { 
+                todolist.sort();
+                displaytodo();
+
+            } 
+        </script>
+         <a href="index.html" style="color: white;">BACK</a>
+    </body>
+</html>
